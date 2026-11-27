@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Gerenciador de Tarefas</h1>
+
+    <section class="formulario">
+      <h2>Nova tarefa</h2>
+
+      <form id="task-form">
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição da tarefa" required>
+
+        <label for="inicio">Início do intervalo</label>
+        <input type="number" id="inicio" name="inicio" value="1" required>
+
+        <label for="fim">Fim do intervalo</label>
+        <input type="number" id="fim" name="fim" value="1000" required>
+
+        <button type="submit" class="btn-cadastrar"> Cadastrar tarefa </button>
+      </form>
+    </section>
+
+    <section class="tarefas">
+      <h2>Tarefas cadastradas</h2>
+
+      <div id="task-list"></div>
+
+      <button type="button" id="refresh-button" class="btn-atualizar-lista"> Atualizar lista </button>
+    </section>
+
+    <p id="message" role="status" aria-live="polite"></p>
+  </main>
+
+  <div id="edit-modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title" style="display: none;">
+		<div class="modal-conteudo">
+
+			<h2 id="edit-modal-title">Editar tarefa</h2>
+
+			<form id="edit-task-form">
+
+				<input type="hidden" id="edit-id">
+
+				<label for="edit-descricao">Descrição</label>
+				<input type="text" id="edit-descricao" required>
+
+				<label for="edit-inicio">Início</label>
+				<input type="number" id="edit-inicio" required>
+
+				<label for="edit-fim">Fim</label>
+				<input type="number" id="edit-fim" required>
+
+				<div class="modal-acoes">
+					<button type="submit" class="btn-salvar"> Salvar alterações </button>
+					<button type="button" id="cancel-edit" class="btn-cancelar"> Cancelar </button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
